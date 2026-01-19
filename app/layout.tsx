@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Convergence } from "@/.yalc/convergence/dist";
+import { Convergence } from "convergence-ui";
 import ClickSpark from "@/components/ClickSpark";
 import { Toaster } from "react-hot-toast";
 
