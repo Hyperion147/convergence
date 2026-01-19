@@ -26,14 +26,6 @@ export const metadata: Metadata = {
     description: "A comprehensive UI kit for modern web applications.",
     url: "https://convergence.suryansu.pro",
     siteName: "Convergence UI",
-    images: [
-      {
-        url: "/og-image.png", 
-        width: 1200,
-        height: 630,
-        alt: "Convergence UI Preview",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
@@ -41,7 +33,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Convergence UI",
     description: "A comprehensive UI kit for modern web applications.",
-    images: ["/og-image.png"],
   },
 };
 

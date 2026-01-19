@@ -19,6 +19,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-[50vh]">
         <div className="w-full max-w-5xl">
+          <h1 className="sr-only">Convergence UI</h1>
           <TextHoverEffect text="CONVERGENCE" />
         </div>
         <p className="max-w-2xl text-xl text-muted-foreground leading-relaxed">
