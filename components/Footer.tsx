@@ -28,23 +28,24 @@ const Footer = () => {
                 <li>
                   <a
                     href="https://www.npmjs.com/package/convergence-ui"
+                    target="_blank"
                     className="hover:text-primary transition-colors"
                   >
                     NPM Package
                   </a>
                 </li>
                 <li>
-                  <a href="https://suryansu.pro" className="hover:text-primary transition-colors">
+                  <a href="https://suryansu.pro" target="_blank" className="hover:text-primary transition-colors">
                     Portfolio
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/Hyperion147" className="hover:text-primary transition-colors">
+                  <a href="https://github.com/Hyperion147" target="_blank" className="hover:text-primary transition-colors">
                     Github
                   </a>
                 </li>
                 <li>
-                  <a href="https://x.com/Hyperion9913" className="hover:text-primary transition-colors">
+                  <a href="https://x.com/Hyperion9913" target="_blank" className="hover:text-primary transition-colors">
                     Twitter
                   </a>
                 </li>
@@ -52,7 +53,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted-foreground">
               © 2026 Convergence UI. All rights reserved.
             </p>

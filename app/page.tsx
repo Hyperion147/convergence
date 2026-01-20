@@ -2,13 +2,13 @@
 
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { DemoArea } from "@/components/DemoArea";
+import Link from "next/link";
 import {
   Copy,
   RefreshCw,
   Palette,
   Layout,
   MousePointer2,
-  Github,
 } from "lucide-react";
 import toast from "react-hot-toast";
 import Footer from "@/components/Footer";
@@ -28,15 +28,13 @@ export default function Home() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mt-8">
-          <div className="flex items-center gap-2 px-6 py-3 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity cursor-pointer shadow-lg shadow-primary/20">
+          <Link
+            href="/docs"
+            className="flex items-center gap-2 px-6 py-3 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity cursor-pointer shadow-lg shadow-primary/20"
+          >
             <Layout className="w-5 h-5" />
-            <a
-              href="https://www.npmjs.com/package/convergence-ui"
-              target="_blank"
-            >
-              Get Started
-            </a>
-          </div>
+            Get Started
+          </Link>
           <div
             onClick={() => {
               navigator.clipboard.writeText("npm install convergence-ui");
@@ -136,7 +134,7 @@ export default function Home() {
               className="group relative p-4 flex gap-4 items-start border-b border-r border-dashed border-primary/20 hover:bg-primary/5 transition-colors"
             >
               <div
-                className="w-12 h-12 rounded-lg border border-border shadow-sm transition-transform group-hover:scale-105 duration-300"
+                className="w-12 h-12 rounded-lg shadow-sm transition-transform group-hover:scale-105 duration-300"
                 style={{ backgroundColor: `var(--${token.var})` }}
               />
 
