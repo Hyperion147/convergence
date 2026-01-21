@@ -7,7 +7,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div className="md:col-span-2 space-y-4">
               <div className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded-md bg-linear-to-br from-primary to-accent">
+                <div className="h-8 w-8 rounded-md bg-primary">
                     <img src="/convergence.svg" alt="" className="p-1" />
                 </div>
                 <span className="font-bold text-2xl tracking-tight">

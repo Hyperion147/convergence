@@ -49,11 +49,11 @@ export const TextHoverEffect = ({
         >
           {hovered && (
             <>
-              <stop offset="0%" stopColor="#739072" />
-              <stop offset="25%" stopColor="#0f140f" />
-              <stop offset="50%" stopColor="#739072" />
-              <stop offset="75%" stopColor="#0f140f" />
-              <stop offset="100%" stopColor="#739072" />
+              <stop offset="0%" stopColor="#385537ff" />
+              <stop offset="25%" stopColor="#0c0c0cff" />
+              <stop offset="50%" stopColor="#385537ff" />
+              <stop offset="75%" stopColor="#0c0c0cff" />
+              <stop offset="100%" stopColor="#385537ff" />
             </>
           )}
         </linearGradient>
@@ -90,7 +90,7 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.5"
-        className="fill-transparent stroke-neutral-200 font-[helvetica] text-4xl font-bold dark:stroke-neutral-800"
+        className="fill-transparent stroke-green-500 dark:stroke-green-200 font-[helvetica] text-4xl font-bold"
         style={{ opacity: hovered ? 0.7 : 0 }}
       >
         {text}
@@ -101,7 +101,7 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.5"
-        className="fill-transparent stroke-neutral-200 font-[helvetica] text-4xl font-bold dark:stroke-neutral-800"
+        className="fill-transparent stroke-green-500 dark:stroke-green-200 font-[helvetica] text-4xl font-bold"
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
           strokeDashoffset: 0,
