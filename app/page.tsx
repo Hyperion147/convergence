@@ -3,13 +3,7 @@
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { DemoArea } from "@/components/DemoArea";
 import Link from "next/link";
-import {
-  Copy,
-  RefreshCw,
-  Palette,
-  Layout,
-  MousePointer2,
-} from "lucide-react";
+import { Copy, RefreshCw, Palette, Layout, MousePointer2 } from "lucide-react";
 import toast from "react-hot-toast";
 import Footer from "@/components/Footer";
 
@@ -53,7 +47,7 @@ export default function Home() {
             className="flex items-center gap-2 px-6 py-3 rounded-md border border-border bg-card text-card-foreground hover:bg-muted transition-colors cursor-pointer active:scale-95"
           >
             <Copy className="w-4 h-4" />
-            <span>npm install convergence-ui</span>
+            <span className="font-mono">npm install convergence-ui</span>
           </div>
         </div>
       </section>
@@ -63,7 +57,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              <h2 className="text-3xl md:text-4xl font-bold font-serif text-foreground">
                 Real-time Color Manipulation
               </h2>
               <p className="text-muted-foreground text-lg">
@@ -102,7 +96,9 @@ export default function Home() {
       {/* Palette Grid */}
       <section className="px-4 py-24 max-w-7xl mx-auto">
         <div className="flex flex-col items-center mb-16 text-center space-y-2">
-          <h2 className="text-3xl font-bold tracking-tight">System Tokens</h2>
+          <h2 className="text-3xl font-bold font-serif tracking-tight">
+            System Tokens
+          </h2>
           <p className="text-muted-foreground">
             Semantic color mappings derived from your palette.
           </p>
@@ -140,7 +136,7 @@ export default function Home() {
 
               <div className="space-y-1">
                 <span className="block font-medium text-sm">{token.name}</span>
-                <code className="text-[10px] text-muted-foreground bg-muted/50 px-1.5 py-0.5 rounded-sm">
+                <code className="text-[10px] font-mono text-muted-foreground bg-muted/50 px-1.5 py-0.5 rounded-sm">
                   --{token.var}
                 </code>
               </div>

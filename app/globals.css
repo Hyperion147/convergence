@@ -4,40 +4,40 @@
   /* Core Palette (Derived from user's hex colors) */
   --background: oklch(0.1839 0.0127 145.036); /* #0f140f */
   --foreground: oklch(0.5084 0.0587 147.037); /* #4F6F52 */
-  
+
   --primary: oklch(0.6224 0.0553 144.027); /* #739072 */
   --primary-foreground: oklch(0.1839 0.0127 145.036);
-  
+
   --secondary: oklch(0.9174 0.0296 87.549); /* #ECE3CE */
   --secondary-foreground: oklch(0.1839 0.0127 145.036);
-  
+
   --accent: oklch(0.6224 0.0553 144.027); /* #739072 */
   --accent-foreground: oklch(0.1839 0.0127 145.036);
 
   /* Derived UI Colors */
   --card: oklch(0.2 0.015 145.036);
   --card-foreground: oklch(0.5084 0.0587 147.037);
-  
+
   --popover: oklch(0.1839 0.0127 145.036);
   --popover-foreground: oklch(0.5084 0.0587 147.037);
-  
+
   --muted: oklch(0.25 0.02 145.036);
-  --muted-foreground: oklch(0.40 0.04 147.037);
-  
+  --muted-foreground: oklch(0.4 0.04 147.037);
+
   --destructive: oklch(0.5 0.2 25);
   --destructive-foreground: oklch(0.98 0 0);
-  
+
   --border: oklch(0.3 0.03 145.036);
   --input: oklch(0.3 0.03 145.036);
   --ring: oklch(0.6224 0.0553 144.027);
-  
+
   /* Charts */
   --chart-1: oklch(0.55 0.13 23.98);
   --chart-2: oklch(0.55 0.12 170);
   --chart-3: oklch(0.35 0.15 270);
   --chart-4: oklch(0.7 0.15 80);
   --chart-5: oklch(0.55 0.15 320);
-  
+
   /* Sidebar */
   --sidebar: oklch(0.15 0.0127 145.036);
   --sidebar-foreground: oklch(0.5084 0.0587 147.037);
@@ -77,9 +77,10 @@
   --radius-sm: 0.125rem;
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
-  
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair-serif);
 
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
   --animate-grade: grade 4s ease infinite alternate;
@@ -114,14 +115,22 @@ body {
 }
 
 @layer base {
-  *, ::after, ::before {
+  *,
+  ::after,
+  ::before {
     border-style: dashed !important;
     border-radius: 0 !important;
   }
 }
 
 @layer utilities {
-  .border, .border-l, .border-r, .border-t, .border-b, .border-x, .border-y {
+  .border,
+  .border-l,
+  .border-r,
+  .border-t,
+  .border-b,
+  .border-x,
+  .border-y {
     border-width: 2px !important;
   }
 }

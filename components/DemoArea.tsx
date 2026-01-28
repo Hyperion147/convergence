@@ -87,6 +87,37 @@ export function DemoArea() {
               </button>
             </div>
           </div>
+
+          {/* Typography Preview */}
+          <div className="space-y-3 pt-4 border-t border-border/50">
+            <label className="text-sm font-medium">Typography Styles</label>
+            <div className="space-y-2">
+              <div className="flex flex-col gap-1 p-3 rounded-md bg-muted/20 border border-border">
+                <span className="text-[10px] text-muted-foreground uppercase tracking-wider font-mono">
+                  Sans Serif
+                </span>
+                <p className="font-sans text-sm">
+                  The quick brown fox jumps over the lazy dog.
+                </p>
+              </div>
+              <div className="flex flex-col gap-1 p-3 rounded-md bg-muted/20 border border-border">
+                <span className="text-[10px] text-muted-foreground uppercase tracking-wider font-mono">
+                  Serif
+                </span>
+                <p className="font-serif text-sm">
+                  The quick brown fox jumps over the lazy dog.
+                </p>
+              </div>
+              <div className="flex flex-col gap-1 p-3 rounded-md bg-muted/20 border border-border">
+                <span className="text-[10px] text-muted-foreground uppercase tracking-wider font-mono">
+                  Monospace
+                </span>
+                <p className="font-mono text-sm">
+                  The quick brown fox jumps over the lazy dog.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

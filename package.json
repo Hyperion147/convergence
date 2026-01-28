@@ -12,7 +12,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "convergence": "file:.yalc/convergence",
-    "convergence-ui": "^1.2.0",
+    "convergence-ui": "file:.yalc/convergence-ui",
     "lucide-react": "^0.562.0",
     "motion": "^12.27.0",
     "next": "16.1.3",
