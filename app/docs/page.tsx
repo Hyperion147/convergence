@@ -5,23 +5,20 @@ import { ArrowLeft, Copy, Check } from "lucide-react";
 import { useState } from "react";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import Footer from "@/components/Footer";
+import { playClickSound } from "@/components/ClickSound";
 
 export default function DocsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground font-sans">
-      <div className="max-w-4xl mx-auto px-6 py-12 md:py-20">
+      <div className="max-w-4xl mx-auto px-6 py-12">
         <div className="mb-12">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 text-sm font-medium"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Home
           </Link>
-          <div className="w-full max-w-5xl">
-            <h1 className="sr-only">Convergence UI</h1>
-            <TextHoverEffect text="CONVERGENCE" />
-          </div>
         </div>
 
         <div className="space-y-16">
@@ -213,6 +210,7 @@ function CodeBlock({ code, language }: { code: string; language: string }) {
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = () => {
+    playClickSound();
     navigator.clipboard.writeText(code);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);

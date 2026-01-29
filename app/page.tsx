@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Copy, RefreshCw, Palette, Layout, MousePointer2 } from "lucide-react";
 import toast from "react-hot-toast";
 import Footer from "@/components/Footer";
+import { playClickSound } from "@/components/ClickSound";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
           </Link>
           <div
             onClick={() => {
+              playClickSound();
               navigator.clipboard.writeText("npm install convergence-ui");
               toast.success("Command copied to clipboard", {
                 style: {
