@@ -6,6 +6,7 @@ import { useState } from "react";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import Footer from "@/components/Footer";
 import { playClickSound } from "@/components/ClickSound";
+import { TableOfContents } from "@/components/TableOfContents";
 
 export default function DocsPage() {
   return (
@@ -22,7 +23,7 @@ export default function DocsPage() {
         </div>
 
         <div className="space-y-16">
-          <Section title="Installation">
+          <Section title="Installation" id="installation">
             <div className="space-y-4">
               <CodeBlock code="npm install convergence-ui" language="bash" />
               <CodeBlock code="yarn add convergence-ui" language="bash" />
@@ -30,10 +31,13 @@ export default function DocsPage() {
             </div>
           </Section>
 
-          <Section title="Usage">
+          <Section title="Usage" id="usage">
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-semibold mb-3">
+                <h3
+                  id="comparison-component"
+                  className="text-xl font-semibold mb-3"
+                >
                   1. The Comparison Component (Recommended)
                 </h3>
                 <p className="text-muted-foreground mb-4">
@@ -69,7 +73,10 @@ export default function RootLayout({ children }) {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3">
+                <h3
+                  id="programmatic-usage"
+                  className="text-xl font-semibold mb-3"
+                >
                   2. Programmatic Usage
                 </h3>
                 <p className="text-muted-foreground mb-4">
@@ -99,7 +106,7 @@ engine.setOklch("primary", { l: 0.6, c: 0.2, h: 250 });`}
             </div>
           </Section>
 
-          <Section title="Configuration">
+          <Section title="Configuration" id="configuration">
             <p className="text-muted-foreground mb-6">
               The{" "}
               <code className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono text-foreground">
@@ -141,7 +148,7 @@ engine.setOklch("primary", { l: 0.6, c: 0.2, h: 250 });`}
             </div>
           </Section>
 
-          <Section title="Types">
+          <Section title="Types" id="types">
             <p className="text-muted-foreground mb-4">
               convergence-ui is written in TypeScript and exports all necessary
               types relative to its operation.
@@ -155,7 +162,7 @@ engine.setOklch("primary", { l: 0.6, c: 0.2, h: 250 });`}
             />
           </Section>
 
-          <Section title="Presets">
+          <Section title="Presets" id="presets">
             <p className="text-muted-foreground pb-10">
               The package comes with standard Light and Dark presets out of the
               box.
@@ -164,6 +171,7 @@ engine.setOklch("primary", { l: 0.6, c: 0.2, h: 250 });`}
         </div>
 
         <Footer />
+        <TableOfContents />
       </div>
     </div>
   );
@@ -172,12 +180,14 @@ engine.setOklch("primary", { l: 0.6, c: 0.2, h: 250 });`}
 function Section({
   title,
   children,
+  id,
 }: {
   title: string;
   children: React.ReactNode;
+  id?: string;
 }) {
   return (
-    <section>
+    <section id={id}>
       <h2 className="text-2xl font-bold mb-6 text-foreground flex items-center gap-2">
         {title}
       </h2>
