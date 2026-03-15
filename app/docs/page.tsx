@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, Copy, Check } from "lucide-react";
+import { ArrowLeft, Copy, Check, Palette, Type, Layout, Database, Zap, Globe, Sparkles } from "lucide-react";
 import { useState } from "react";
-import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import Footer from "@/components/Footer";
 import { playClickSound } from "@/components/ClickSound";
 import { TableOfContents } from "@/components/TableOfContents";
@@ -12,7 +11,7 @@ export default function DocsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground font-sans">
       <div className="max-w-4xl mx-auto px-6 py-12">
-        <div className="mb-12">
+        <div className="mb-8 flex justify-between">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
@@ -20,6 +19,7 @@ export default function DocsPage() {
             <ArrowLeft className="w-4 h-4" />
             Back to Home
           </Link>
+          <p className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium">v1.5</p>
         </div>
 
         <div className="space-y-16">
@@ -148,25 +148,181 @@ engine.setOklch("primary", { l: 0.6, c: 0.2, h: 250 });`}
             </div>
           </Section>
 
+          <Section title="Typography & Layout Support" id="typography-layout">
+            <p className="text-muted-foreground mb-4">
+              Convergence UI provides built-in support for managing global typography and layout variables. It injects a style tag to apply chosen fonts and letter-spacing across your application, and outputs common design system layout variables.
+            </p>
+            
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">Typography</h4>
+                <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-2">
+                  <li><strong className="text-foreground font-medium">Sans-Serif</strong>: Inter, Poppins, Roboto, Open Sans.</li>
+                  <li><strong className="text-foreground font-medium">Serif</strong>: Georgia, Merriweather, Playfair Display, Garamond.</li>
+                  <li><strong className="text-foreground font-medium">Monospace</strong>: Menlo, JetBrains Mono, Fira Code, Courier.</li>
+                  <li><strong className="text-foreground font-medium">Letter Spacing</strong>: Fine-grained control with real-world units (px/em).</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">Layout</h4>
+                <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-2">
+                  <li><strong className="text-foreground font-medium">Border Radius</strong> (<code className="text-xs bg-muted px-1 py-0.5 rounded">--radius</code>): Controlled in <code className="text-xs bg-muted px-1 py-0.5 rounded">rem</code> units for accessible, scalable rounding.</li>
+                  <li><strong className="text-foreground font-medium">Border Width</strong> (<code className="text-xs bg-muted px-1 py-0.5 rounded">--border-width</code>): Controlled in exact <code className="text-xs bg-muted px-1 py-0.5 rounded">px</code> units for sharp strokes.</li>
+                  <li><strong className="text-foreground font-medium">Border Style</strong> (<code className="text-xs bg-muted px-1 py-0.5 rounded">--border-style</code>): Toggle between <code className="text-xs bg-muted px-1 py-0.5 rounded">solid</code>, <code className="text-xs bg-muted px-1 py-0.5 rounded">dashed</code>, and <code className="text-xs bg-muted px-1 py-0.5 rounded">dotted</code> borders.</li>
+                </ul>
+              </div>
+            </div>
+          </Section>
+
+          <Section title="Presets" id="presets">
+            <p className="text-muted-foreground mb-4">
+              The package comes with several curated presets out of the box:
+            </p>
+            <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-2">
+              <li><strong className="text-foreground font-medium">Light</strong>: Minimalist, clean light theme.</li>
+              <li><strong className="text-foreground font-medium">Dark</strong>: Deep zinc-based dark mode.</li>
+              <li><strong className="text-foreground font-medium">Cold</strong>: A professional blue-toned "oceanic" theme.</li>
+              <li><strong className="text-foreground font-medium">Warm</strong>: A cozy, red-tinted "sunset" theme.</li>
+            </ul>
+          </Section>
+
           <Section title="Types" id="types">
             <p className="text-muted-foreground mb-4">
-              convergence-ui is written in TypeScript and exports all necessary
-              types relative to its operation.
+              Convergence UI is fully type safe. Key interfaces include <code className="bg-muted px-1 py-0.5 rounded text-xs">ThemeConfig</code>
             </p>
             <CodeBlock
               language="typescript"
               code={`import { OklchColor, ThemeConfig, ThemeKey } from "convergence-ui";
 
-// OklchColor structure
-// { l: number; c: number; h: number; }`}
+// OklchColor { l: number; c: number; h: number; }
+
+// ThemeConfig includes:
+// background, foreground, primary, secondary, 
+// OklchColor represents a color in the OKLCH color space.
+// { l: number; c: number; h: number; }
+// 'l' (lightness): 0-1 (0% to 100%)
+// 'c' (chroma): 0-0.4 (0% to 40%)
+// 'h' (hue): 0-360 (degrees)
+
+// ThemeConfig is the main interface for defining your theme.
+// It includes all the CSS variable keys that Convergence UI manages.
+// Example keys:
+// background, foreground, primary, secondary,
+// accent, muted, destructive, border, input, ring,
+// chart-1...5, sidebar, and more.`}
             />
           </Section>
 
-          <Section title="Presets" id="presets">
-            <p className="text-muted-foreground pb-10">
-              The package comes with standard Light and Dark presets out of the
-              box.
-            </p>
+          <Section title="How it Works" id="how-it-works">
+            <div className="space-y-12 mb-12">
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Convergence UI operates by dynamically creating, updating, and synchronizing a set of CSS Custom Properties (CSS variables) right in the browser's Document Object Model (DOM).
+              </p>
+
+              {/* 1. Colors */}
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 flex items-center gap-3">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-md bg-primary/10 text-primary text-sm font-bold">1</span>
+                    Colors
+                  </h3>
+                  <p className="text-muted-foreground">
+                    The engine standardizes all color manipulation around the <strong className="text-foreground font-medium">OKLCH</strong> color space to guarantee perceptual uniformity (meaning changes in lightness are perceived consistently across different hues).
+                  </p>
+                </div>
+
+                <ul className="grid gap-4 sm:grid-cols-2">
+                  <FeatureItem
+                    icon={<Database className="w-5 h-5" />}
+                    title="State Management"
+                    desc="Colors are stored internally as simple objects: { l: number, c: number, h: number }."
+                  />
+                  <FeatureItem
+                    icon={<Palette className="w-5 h-5" />}
+                    title="Conversion"
+                    desc="Hex inputs from native pickers are intercepted and mathematically converted to OKLCH on the fly."
+                  />
+                  <FeatureItem
+                    icon={<Type className="w-5 h-5" />}
+                    title="DOM Injection"
+                    desc="Adjusting a color calls setProperty('--color-name', ...) directly on the documentRoot."
+                  />
+                  <FeatureItem
+                    icon={<Zap className="w-5 h-5" />}
+                    title="Instant Updates"
+                    desc="UI elements using var(--color-name) update instantly without requiring page reloads."
+                  />
+                </ul>
+              </div>
+
+              {/* 2. Typography */}
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 flex items-center gap-3">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-md bg-primary/10 text-primary text-sm font-bold">2</span>
+                    Typography
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Typography manages global font families and letter spacing across your entire application.
+                  </p>
+                </div>
+
+                <ul className="grid gap-4 sm:grid-cols-2">
+                  <FeatureItem
+                    icon={<Globe className="w-5 h-5" />}
+                    title="Global Style Interception"
+                    desc="A global <style> tag is injected on mount to apply CSS variables to base elements like body and button."
+                  />
+                  <FeatureItem
+                    icon={<Sparkles className="w-5 h-5" />}
+                    title="Dynamic Fonts"
+                    desc="Google Fonts (like Inter or Poppins) are dynamically fetched and appended to the document head."
+                  />
+                  <FeatureItem
+                    icon={<Type className="w-5 h-5" />}
+                    title="CSS Variables"
+                    desc="Changes to settings like letter-spacing immediately update root variables, ensuring cascading updates."
+                  />
+                </ul>
+              </div>
+
+              {/* 3. Layout */}
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 flex items-center gap-3">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-md bg-primary/10 text-primary text-sm font-bold">3</span>
+                    Layout (Borders & Spacing)
+                  </h3>
+                  <p className="text-muted-foreground">
+                    The Layout tab manipulates the core structural tokens defining your design system—specifically Border Radius, Border Width, and Border Style.
+                  </p>
+                </div>
+
+                <ul className="grid gap-4 sm:grid-cols-2">
+                  <FeatureItem
+                    icon={<Layout className="w-5 h-5" />}
+                    title="Immediate Injection"
+                    desc="Utility overrides (like .border and .rounded-*) are injected into a style block on mount."
+                  />
+                  <FeatureItem
+                    icon={<Type className="w-5 h-5" />}
+                    title="Class Hijacking"
+                    desc="Standard utility toolkits (like Tailwind CSS) are mathematically overridden to use dynamic tokens."
+                  />
+                  <FeatureItem
+                    icon={<Type className="w-5 h-5" />}
+                    title="Property Updates"
+                    desc="Sliders update underlying rem and px variables, while styling tabs toggle border-style."
+                  />
+                  <FeatureItem
+                    icon={<Layout className="w-5 h-5" />}
+                    title="Instant Repaint"
+                    desc="Adjusting any layout control triggers an instant global UI repaint based on your new settings."
+                  />
+                </ul>
+              </div>
+            </div>
           </Section>
         </div>
 
@@ -201,13 +357,13 @@ function FeatureItem({
   title,
   desc,
 }: {
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   desc: string;
 }) {
   return (
     <li className="flex gap-4 p-4 rounded-lg border border-border/50 bg-card/50 hover:border-primary/20 hover:bg-muted/30 transition-all">
-      <span className="text-2xl pt-1">{icon}</span>
+      <div className="pt-0.5 text-primary">{icon}</div>
       <div>
         <h4 className="font-semibold text-foreground mb-1">{title}</h4>
         <p className="text-sm text-muted-foreground">{desc}</p>

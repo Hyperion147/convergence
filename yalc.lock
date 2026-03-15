@@ -1,14 +1,10 @@
 {
   "version": "v1",
   "packages": {
-    "convergence": {
-      "signature": "2ac0894d2370eeb07c9b55a969310c4e",
-      "file": true
-    },
     "convergence-ui": {
-      "signature": "2d074e634c35c27d893e83d6043e318e",
+      "signature": "00b0516764ae926e3fd852fa5c396cbc",
       "file": true,
-      "replaced": "^1.2.0"
+      "replaced": "^1.4.0"
     }
   }
 }
