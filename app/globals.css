@@ -14,6 +14,16 @@
   --accent: oklch(0.6224 0.0553 144.027); /* #739072 */
   --accent-foreground: oklch(0.1839 0.0127 145.036);
 
+  /* Font stacks — overridable by Convergence at runtime */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-serif: var(--font-playfair-serif), Georgia, serif;
+
+  /* Layout — overridable by Convergence at runtime */
+  --radius: 0rem;
+  --border-width: 2px;
+  --border-style: dashed;
+
   /* Derived UI Colors */
   --card: oklch(0.2 0.015 145.036);
   --card-foreground: oklch(0.5084 0.0587 147.037);
@@ -78,9 +88,9 @@
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-playfair-serif);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
 
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
   --animate-grade: grade 4s ease infinite alternate;
@@ -118,8 +128,8 @@ body {
   *,
   ::after,
   ::before {
-    border-style: dashed !important;
-    border-radius: 0 !important;
+    border-style: var(--border-style, dashed) !important;
+    border-radius: var(--radius, 0rem) !important;
   }
 }
 
@@ -131,6 +141,6 @@ body {
   .border-b,
   .border-x,
   .border-y {
-    border-width: 2px !important;
+    border-width: var(--border-width, 2px) !important;
   }
 }
