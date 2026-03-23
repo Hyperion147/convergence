@@ -7,6 +7,7 @@ import { Copy, RefreshCw, Palette, Layout, MousePointer2 } from "lucide-react";
 import toast from "react-hot-toast";
 import Footer from "@/components/Footer";
 import { playClickSound } from "@/components/ClickSound";
+import SquigglyArrow from "@/components/SquigglyArrow";
 
 export default function Home() {
   return (
@@ -153,6 +154,7 @@ export default function Home() {
       </section>
 
       <Footer />
+      <SquigglyArrow />
     </div>
   );
 }

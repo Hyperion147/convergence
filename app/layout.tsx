@@ -22,23 +22,48 @@ const playfairSerif = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://convergence.suryansu.pro"),
   title: {
-    default: "Convergence | suryansu.pro",
+    default: "Convergence UI",
     template: "%s | Convergence UI",
   },
-  description: "A comprehensive UI kit for modern web applications.",
+  description:
+    "Convergence UI is a live theme editor and UI kit for Next.js — tweak colors, typography, borders and radius in real time without touching code.",
+  keywords: [
+    "UI kit",
+    "theme editor",
+    "Next.js",
+    "Tailwind CSS",
+    "design system",
+    "React components",
+    "live theme",
+    "CSS variables",
+  ],
+  authors: [{ name: "Suryansu", url: "https://suryansu.pro" }],
   openGraph: {
-    title: "Convergence UI",
-    description: "A comprehensive UI kit for modern web applications.",
+    title: "Convergence UI — Live Theme Editor for Next.js",
+    description:
+      "Tweak colors, typography, borders and radius in real time. No code changes needed.",
     url: "https://convergence.suryansu.pro",
     siteName: "Convergence UI",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Convergence UI — Live Theme Editor",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Convergence UI",
-    description: "A comprehensive UI kit for modern web applications.",
+    title: "Convergence UI — Live Theme Editor for Next.js",
+    description:
+      "Tweak colors, typography, borders and radius in real time. No code changes needed.",
+    images: ["/og-image.png"],
+    creator: "@suryansu.pro",
   },
 };
 
