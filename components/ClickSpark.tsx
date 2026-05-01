@@ -18,6 +18,7 @@ interface Spark {
   y: number;
   angle: number;
   startTime: number;
+  color?: string;
 }
 
 const ClickSpark: React.FC<ClickSparkProps> = ({
@@ -114,7 +115,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
         const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle);
         const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle);
 
-        ctx.strokeStyle = sparkColor;
+        ctx.strokeStyle = spark.color || sparkColor;
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(x1, y1);
@@ -149,12 +150,29 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
+    let activeColor = sparkColor;
+    if (sparkColor.startsWith("var(")) {
+      const varName = sparkColor.match(/var\(([^)]+)\)/)?.[1];
+      if (varName) {
+        const computed = getComputedStyle(canvas).getPropertyValue(varName).trim();
+        if (computed) {
+          // If the computed value is just numbers (e.g., from older Tailwind HSL variables without the wrapper)
+          // We can check if it contains a function like oklch( or hsl( or rgb(.
+          // But in modern CSS it should be a valid color string or we can wrap it if needed.
+          // Since globals.css has oklch(0.2 0 0), we can just use the computed value.
+          // But just to be safe, if we know we are using oklch, and it doesn't have it...
+          activeColor = computed;
+        }
+      }
+    }
+
     const now = performance.now();
     const newSparks: Spark[] = Array.from({ length: sparkCount }, (_, i) => ({
       x,
       y,
       angle: (2 * Math.PI * i) / sparkCount,
       startTime: now,
+      color: activeColor,
     }));
 
     sparksRef.current.push(...newSparks);

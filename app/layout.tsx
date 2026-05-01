@@ -81,7 +81,7 @@ export default function RootLayout({
         <Toaster />
 
         <ClickSpark
-          sparkColor="#739072"
+          sparkColor="var(--primary)"
           sparkSize={12}
           sparkRadius={26}
           sparkCount={8}
