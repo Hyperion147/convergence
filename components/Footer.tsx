@@ -1,5 +1,3 @@
-import { Github, Layout } from "lucide-react"
-
 const Footer = () => {
     return (
         <footer className="border-t border-border bg-muted/5">
@@ -7,7 +5,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div className="md:col-span-2 space-y-4">
               <div className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded-md bg-primary">
+                <div className="h-8 w-8 rounded-md bg-secondary border">
                     <img src="/convergence.svg" alt="" className="p-1" />
                 </div>
                 <span className="font-bold text-2xl tracking-tight">
@@ -15,7 +13,7 @@ const Footer = () => {
                 </span>
               </div>
               <p className="text-muted-foreground max-w-xs text-sm leading-relaxed">
-                The next-generation theming engine for React and Next applications. Built
+                A theming engine for React and Next applications. Built
                 with OKLCH for perceptual uniformity and accessibility.
               </p>
             </div>

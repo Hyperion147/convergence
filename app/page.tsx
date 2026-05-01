@@ -58,8 +58,8 @@ export default function Home() {
       {/* Feature Showcase Grid */}
       <section className="px-4 py-20 bg-muted/30 border-y border-border">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+          <div className="flex flex-col items-center gap-12">
+            <div className="space-y-6 text-center max-w-3xl">
               <h2 className="text-3xl md:text-4xl font-bold font-serif text-foreground">
                 Real-time Color Manipulation
               </h2>
@@ -69,7 +69,7 @@ export default function Home() {
                 mapping across your entire application.
               </p>
 
-              <ul className="space-y-4 pt-4">
+              <ul className="flex flex-wrap justify-center gap-4 pt-4">
                 {[
                   { icon: Palette, text: "Dynamic Theme Generation" },
                   { icon: RefreshCw, text: "Live DOM Injection" },
@@ -79,7 +79,7 @@ export default function Home() {
                     key={i}
                     className="flex items-center gap-3 p-3 rounded-lg border border-border bg-card/50"
                   >
-                    <div className="p-2 rounded-md bg-secondary/10 text-secondary">
+                    <div className="p-2 rounded-md bg-accent">
                       <item.icon size={20} />
                     </div>
                     <span className="font-medium">{item.text}</span>
@@ -89,7 +89,7 @@ export default function Home() {
             </div>
 
             {/* Interactive Preview Card Mockup */}
-            <div className="flex items-center justify-center">
+            <div className="w-full flex items-center justify-center">
               <DemoArea />
             </div>
           </div>
