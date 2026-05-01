@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "Convergence UI — Live Theme Editor for Next.js";
+export const alt = "Convergence UI Documentation";
 export const size = {
   width: 1200,
   height: 630,
@@ -31,13 +31,25 @@ export default async function Image() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "20px",
+            gap: "16px",
             textAlign: "center",
           }}
         >
+          <div
+            style={{
+              fontSize: "16px",
+              color: "#4a9d6f",
+              fontWeight: "600",
+              letterSpacing: "1px",
+              textTransform: "uppercase",
+            }}
+          >
+            Documentation
+          </div>
+
           <h1
             style={{
-              fontSize: "72px",
+              fontSize: "64px",
               fontWeight: "900",
               color: "#ffffff",
               margin: "0",
@@ -45,51 +57,68 @@ export default async function Image() {
               lineHeight: "1.2",
             }}
           >
-            CONVERGENCE
+            Learn Convergence
           </h1>
 
           <p
             style={{
-              fontSize: "28px",
+              fontSize: "24px",
               color: "#a1a8a1",
-              margin: "0 0 20px 0",
+              margin: "20px 0 0 0",
               fontWeight: "500",
+              maxWidth: "80%",
             }}
           >
-            Live Theme Editor for Next.js
+            Comprehensive guide to live theming and UI customization
           </p>
 
           <div
             style={{
               display: "flex",
               gap: "12px",
-              marginTop: "20px",
+              marginTop: "32px",
+              flexWrap: "wrap",
+              justifyContent: "center",
             }}
           >
             <span
               style={{
-                padding: "8px 16px",
-                backgroundColor: "#4a9d6f",
-                color: "#ffffff",
-                borderRadius: "6px",
-                fontSize: "14px",
-                fontWeight: "600",
-              }}
-            >
-              Real-time Theming
-            </span>
-            <span
-              style={{
-                padding: "8px 16px",
+                padding: "6px 12px",
                 backgroundColor: "#2a3d2a",
-                color: "#a1a8a1",
-                borderRadius: "6px",
-                fontSize: "14px",
+                color: "#4a9d6f",
+                borderRadius: "4px",
+                fontSize: "12px",
                 fontWeight: "600",
                 border: "1px solid #3a4d3a",
               }}
             >
-              No Code Changes
+              Installation
+            </span>
+            <span
+              style={{
+                padding: "6px 12px",
+                backgroundColor: "#2a3d2a",
+                color: "#4a9d6f",
+                borderRadius: "4px",
+                fontSize: "12px",
+                fontWeight: "600",
+                border: "1px solid #3a4d3a",
+              }}
+            >
+              API Reference
+            </span>
+            <span
+              style={{
+                padding: "6px 12px",
+                backgroundColor: "#2a3d2a",
+                color: "#4a9d6f",
+                borderRadius: "4px",
+                fontSize: "12px",
+                fontWeight: "600",
+                border: "1px solid #3a4d3a",
+              }}
+            >
+              Examples
             </span>
           </div>
         </div>
@@ -103,7 +132,7 @@ export default async function Image() {
             color: "#686f68",
           }}
         >
-          convergence.suryansu.pro
+          convergence.suryansu.pro/docs
         </div>
       </div>
     ),
