@@ -85,7 +85,7 @@ function ChartTooltipContent({
   return (
     <div
       className={cn(
-        "border-border/50 grid min-w-32 items-start gap-1.5 border px-2.5 py-1.5 text-xs shadow-xl",
+        "border-border/50 grid min-w-32 items-start gap-1.5 border px-4 py-1.5 text-xs shadow-xl",
         roundnessMap[roundness],
         variantMap[variant],
         className,
