@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "Convergence UI Documentation";
+export const alt = "Convergence UI 2.0 Documentation";
 export const size = {
   width: 1200,
   height: 630,
@@ -44,7 +44,7 @@ export default async function Image() {
               textTransform: "uppercase",
             }}
           >
-            Documentation
+            Convergence UI 2.0
           </div>
 
           <h1
@@ -69,7 +69,7 @@ export default async function Image() {
               maxWidth: "80%",
             }}
           >
-            Comprehensive guide to live theming and UI customization
+            Headless OKLCH theme engine docs for React and Tailwind v4
           </p>
 
           <div
@@ -105,6 +105,19 @@ export default async function Image() {
                 border: "1px solid #3a4d3a",
               }}
             >
+              SSR
+            </span>
+            <span
+              style={{
+                padding: "6px 12px",
+                backgroundColor: "#2a3d2a",
+                color: "#4a9d6f",
+                borderRadius: "4px",
+                fontSize: "12px",
+                fontWeight: "600",
+                border: "1px solid #3a4d3a",
+              }}
+            >
               API Reference
             </span>
             <span
@@ -118,7 +131,7 @@ export default async function Image() {
                 border: "1px solid #3a4d3a",
               }}
             >
-              Examples
+              Import / Export
             </span>
           </div>
         </div>

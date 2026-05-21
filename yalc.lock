@@ -2,9 +2,9 @@
   "version": "v1",
   "packages": {
     "convergence-ui": {
-      "signature": "00b0516764ae926e3fd852fa5c396cbc",
+      "signature": "7f421a7bcf70301a475a4e636759921c",
       "file": true,
-      "replaced": "^1.4.0"
+      "replaced": "^1.5.0"
     }
   }
 }

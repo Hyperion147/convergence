@@ -3,19 +3,21 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Documentation",
   description:
-    "Learn how to use Convergence UI - a live theme editor and UI kit for Next.js. Installation guide, API reference, and code examples.",
+    "Learn how to use Convergence UI 2.0, a headless OKLCH theme engine with a React editor for semantic design tokens.",
   keywords: [
     "documentation",
     "guide",
     "tutorial",
     "API reference",
     "Convergence UI",
-    "theme editor",
+    "OKLCH theme engine",
+    "design tokens",
+    "Tailwind v4",
   ],
   openGraph: {
-    title: "Convergence UI Documentation",
+    title: "Convergence UI 2.0 Documentation",
     description:
-      "Learn how to use Convergence UI - a live theme editor and UI kit for Next.js.",
+      "Headless OKLCH theme engine docs with React editor, SSR helpers, import/export flows, and API examples.",
     url: "https://convergence.suryansu.pro/docs",
     type: "website",
     images: [
@@ -29,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Convergence UI Documentation",
+    title: "Convergence UI 2.0 Documentation",
     description:
-      "Learn how to use Convergence UI - a live theme editor and UI kit for Next.js.",
+      "Headless OKLCH theme engine docs with React editor, SSR helpers, import/export flows, and API examples.",
     images: ["/docs/opengraph-image.png"],
   },
 };

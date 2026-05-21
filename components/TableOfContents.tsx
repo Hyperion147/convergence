@@ -12,14 +12,16 @@ interface TocItem {
 
 const tocItems: TocItem[] = [
     { id: "installation", title: "Installation", level: 2 },
-    { id: "usage", title: "Usage", level: 2 },
-    { id: "comparison-component", title: "The Comparison Component", level: 3 },
-    { id: "programmatic-usage", title: "Programmatic Usage", level: 3 },
-    { id: "configuration", title: "Configuration", level: 2 },
-    { id: "typography-layout", title: "Typography & Layout", level: 2 },
-    { id: "presets", title: "Presets", level: 2 },
-    { id: "types", title: "Types", level: 2 },
-    { id: "how-it-works", title: "How it Works", level: 2 },
+    { id: "quick-start", title: "Quick Start", level: 2 },
+    { id: "add-the-editor", title: "Add the Editor", level: 3 },
+    { id: "use-the-engine-directly", title: "Use the Engine Directly", level: 3 },
+    { id: "render-theme-css-during-ssr", title: "Render Theme CSS During SSR", level: 3 },
+    { id: "theme-shape", title: "Theme Shape", level: 2 },
+    { id: "import-and-export", title: "Import and Export", level: 2 },
+    { id: "component-overrides", title: "Component Overrides", level: 2 },
+    { id: "validation-and-qa", title: "Validation and QA", level: 2 },
+    { id: "public-api", title: "Public API", level: 2 },
+    { id: "notes", title: "Notes", level: 2 },
 ];
 
 export function TableOfContents() {
