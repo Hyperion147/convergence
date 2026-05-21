@@ -164,7 +164,7 @@ export default function DocsPage() {
           <p className="text-sm font-medium text-muted-foreground">v2.0</p>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-16 mb-12">
           <section className="space-y-5">
             <div className="space-y-3">
               <p className="text-sm font-medium uppercase tracking-[0.12em] text-primary">
@@ -322,32 +322,6 @@ export default function DocsPage() {
                   {item}
                 </li>
               ))}
-            </ul>
-          </Section>
-
-          <Section title="Notes" id="notes">
-            <ul className="space-y-2 text-muted-foreground">
-              <li>The editor is a client component.</li>
-              <li>
-                The engine can run without the editor in build-time or server-side
-                flows.
-              </li>
-              <li>
-                The editor includes local saved workspaces, undo/redo history, and
-                hidden-scrollbar contained scrolling.
-              </li>
-              <li>
-                Fonts are loaded lazily in the editor when supported Google Fonts
-                are selected.
-              </li>
-              <li>
-                Local <code className="rounded bg-muted px-1.5 py-0.5 text-sm font-mono text-foreground">yalc</code>{" "}
-                testing steps live in{" "}
-                <code className="rounded bg-muted px-1.5 py-0.5 text-sm font-mono text-foreground">
-                  X:\webdev\package-convergence\LOCAL_TESTING.md
-                </code>
-                .
-              </li>
             </ul>
           </Section>
         </div>

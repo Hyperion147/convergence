@@ -21,7 +21,6 @@ const tocItems: TocItem[] = [
     { id: "component-overrides", title: "Component Overrides", level: 2 },
     { id: "validation-and-qa", title: "Validation and QA", level: 2 },
     { id: "public-api", title: "Public API", level: 2 },
-    { id: "notes", title: "Notes", level: 2 },
 ];
 
 export function TableOfContents() {
