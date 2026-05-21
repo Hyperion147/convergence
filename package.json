@@ -11,7 +11,7 @@
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "convergence-ui": "file:.yalc/convergence-ui",
+    "convergence-ui": "^2.0.0",
     "date-fns": "^4.1.0",
     "howler": "^2.2.4",
     "lucide-react": "^0.562.0",
