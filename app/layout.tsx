@@ -67,6 +67,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { TooltipProvider } from "@/components/ui/tooltip";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -77,20 +79,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfairSerif.variable} antialiased`}
       >
-        <Convergence />
-        <Toaster />
+        <TooltipProvider>
+          <Convergence />
+          <Toaster />
 
-        <ClickSpark
-          sparkColor="var(--primary)"
-          sparkSize={12}
-          sparkRadius={26}
-          sparkCount={8}
-          duration={500}
-          easing="ease-out"
-          extraScale={1}
-        >
-          {children}
-        </ClickSpark>
+          <ClickSpark
+            sparkColor="var(--primary)"
+            sparkSize={12}
+            sparkRadius={26}
+            sparkCount={8}
+            duration={500}
+            easing="ease-out"
+            extraScale={1}
+          >
+            {children}
+          </ClickSpark>
+        </TooltipProvider>
       </body>
     </html>
   );

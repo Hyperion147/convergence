@@ -40,8 +40,8 @@
 
   /* Layout — overridable by Convergence at runtime */
   --radius: 0rem;
-  --border-width: 2px;
-  --border-style: dashed;
+  --border-width: 1px;
+  --border-style: solid;
 }
 
 @theme inline {
@@ -113,19 +113,42 @@ body {
   *,
   ::after,
   ::before {
-    border-style: var(--border-style, dashed) !important;
-    border-radius: var(--radius, 0rem) !important;
+    border-color: var(--border);
+    border-radius: var(--radius, 0.5rem);
   }
 }
 
 @layer utilities {
-  .border,
-  .border-l,
-  .border-r,
-  .border-t,
-  .border-b,
-  .border-x,
+  .border {
+    border-width: var(--border-width, 1px);
+    border-style: var(--border-style, solid);
+  }
+  .border-l {
+    border-left-width: var(--border-width, 1px);
+    border-left-style: var(--border-style, solid);
+  }
+  .border-r {
+    border-right-width: var(--border-width, 1px);
+    border-right-style: var(--border-style, solid);
+  }
+  .border-t {
+    border-top-width: var(--border-width, 1px);
+    border-top-style: var(--border-style, solid);
+  }
+  .border-b {
+    border-bottom-width: var(--border-width, 1px);
+    border-bottom-style: var(--border-style, solid);
+  }
+  .border-x {
+    border-left-width: var(--border-width, 1px);
+    border-right-width: var(--border-width, 1px);
+    border-left-style: var(--border-style, solid);
+    border-right-style: var(--border-style, solid);
+  }
   .border-y {
-    border-width: var(--border-width, 2px) !important;
+    border-top-width: var(--border-width, 1px);
+    border-bottom-width: var(--border-width, 1px);
+    border-top-style: var(--border-style, solid);
+    border-bottom-style: var(--border-style, solid);
   }
 }

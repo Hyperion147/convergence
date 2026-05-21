@@ -10,17 +10,43 @@ import {
     Layout,
     MousePointer2,
     ArrowUpRight,
+    Sparkles,
 } from "lucide-react";
 import toast from "react-hot-toast";
 import Footer from "@/components/Footer";
 import { playClickSound } from "@/components/ClickSound";
 import SquigglyArrow from "@/components/SquigglyArrow";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
     return (
         <div className="bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
             {/* Hero Section */}
-            <section className="relative flex flex-col items-center justify-center min-h-[50vh]">
+            <section className="relative flex flex-col items-center justify-center min-h-[50vh] pt-10">
+                {/* 2.0 Announcement Badge with Tooltip */}
+                <div className="mb-4">
+                    <Tooltip delayDuration={200}>
+                        <TooltipTrigger asChild>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-xl border border-primary/20 bg-primary/20 hover:bg-primary/30 text-foreground text-xs font-medium transition-all duration-300 cursor-help shadow-sm animate-fade-in-up">
+                                <Badge variant="secondary" className="px-1.5 py-0 rounded-full text-[9px] uppercase tracking-wider font-bold bg-primary text-primary-foreground border-none">
+                                    v2.0
+                                </Badge>
+                                <span className="flex items-center gap-1">
+                                    Convergence 2.0 is live! <Sparkles className="size-3 text-primary animate-pulse" />
+                                </span>
+                            </div>
+                        </TooltipTrigger>
+                        <TooltipContent side="top" className="max-w-xs p-3 bg-background text-primary border border-border">
+                            <ul className="list-disc pl-4 space-y-0.5 text-[11px]">
+                                <li>React 19 & Next.js 16 Ready</li>
+                                <li>Tailwind CSS v4 engine alignment</li>
+                                <li>Advanced dynamic spacing, borders, & shadows</li>
+                            </ul>
+                        </TooltipContent>
+                    </Tooltip>
+                </div>
+
                 <div className="w-full max-w-5xl">
                     <h1 className="sr-only">Convergence UI</h1>
                     <TextHoverEffect text="CONVERGENCE" />
@@ -77,54 +103,8 @@ export default function Home() {
 
             {/* Feature Showcase Grid */}
             <section className="px-4 py-20 bg-muted/30 border-y border-border">
-                <div className="max-w-6xl mx-auto">
-                    <div className="flex flex-col items-center gap-12">
-                        <div className="space-y-6 text-center max-w-4xl">
-                            <h2 className="text-3xl md:text-4xl font-bold font-serif text-foreground">
-                                Real-time Color Manipulation
-                            </h2>
-                            <p className="text-muted-foreground text-lg">
-                                Built on the OKLCH color space for perceptual
-                                uniformity. Convergence automatically handles
-                                contrast ratios and semantic mapping across your
-                                entire application.
-                            </p>
-
-                            <ul className="flex flex-wrap justify-center gap-4 pt-4">
-                                {[
-                                    {
-                                        icon: Palette,
-                                        text: "Dynamic Theme Generation",
-                                    },
-                                    {
-                                        icon: RefreshCw,
-                                        text: "Live DOM Injection",
-                                    },
-                                    {
-                                        icon: MousePointer2,
-                                        text: "Framework Agnostic Core",
-                                    },
-                                ].map((item, i) => (
-                                    <li
-                                        key={i}
-                                        className="flex items-center gap-3 p-3 rounded-lg border border-border bg-card/50"
-                                    >
-                                        <div className="p-2 rounded-md bg-accent">
-                                            <item.icon size={20} />
-                                        </div>
-                                        <span className="font-medium">
-                                            {item.text}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Interactive Preview Card Mockup */}
-                        <div className="w-full flex items-center justify-center">
-                            <DemoArea />
-                        </div>
-                    </div>
+                <div className="w-full flex items-center justify-center">
+                    <DemoArea />
                 </div>
             </section>
 
