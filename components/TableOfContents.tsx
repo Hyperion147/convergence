@@ -3,7 +3,9 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { playClickSound } from "./ClickSound";
-
+import { smoothScrollToId } from "@/lib/smooth-scroll";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 interface TocItem {
     id: string;
     title: string;
@@ -60,15 +62,19 @@ export function TableOfContents() {
         id: string,
     ) => {
         e.preventDefault();
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-            setActiveId(id);
-        }
+        smoothScrollToId(id);
+        setActiveId(id);
     };
 
     return (
-        <nav className="fixed left-8 top-24 hidden xl:block w-64 p-4">
+        <nav className="fixed left-8 top-12 hidden xl:block w-64">
+            <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary pb-4"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
+          </Link>
             <ul className="space-y-2 text-sm">
                 {tocItems.map((item) => (
                     <li

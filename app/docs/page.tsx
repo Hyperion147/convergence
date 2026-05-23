@@ -153,17 +153,6 @@ export default function DocsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground font-sans">
       <div className="mx-auto max-w-4xl px-6 py-12">
-        <div className="mb-8 flex items-center justify-between gap-4">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Home
-          </Link>
-          <p className="text-sm font-medium text-muted-foreground">v2.0</p>
-        </div>
-
         <div className="space-y-16 mb-12">
           <section className="space-y-5">
             <div className="space-y-3">

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css"
 import { Convergence } from "convergence-ui";
 import ClickSpark from "@/components/ClickSpark";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
 import { Toaster } from "react-hot-toast";
 
@@ -75,11 +76,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfairSerif.variable} antialiased`}
       >
         <TooltipProvider>
+          <SmoothScrollProvider />
           <Convergence />
           <Toaster />
 

@@ -499,11 +499,8 @@ export function DemoArea() {
 
               {/* Calendar / Release Schedule */}
               <Card className="shadow-sm border border-border">
-                <CardHeader className="p-4 pb-2">
-                  <CardTitle className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Release Schedule</CardTitle>
-                </CardHeader>
-                <CardContent className="p-2 flex justify-center items-center">
-                  <div className="w-full border-none bg-background rounded-lg p-1 flex justify-center items-center shadow-xs">
+                <CardContent className="flex justify-center items-center">
+                  <div className="w-full border-none bg-background rounded-l flex justify-center items-center shadow-xs">
                     {mounted ? (
                       <Calendar
                         mode="single"
@@ -648,29 +645,6 @@ export function DemoArea() {
                       hideGrid={false}
                       variant="filled"
                     />
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Traffic Flow Sankey Chart */}
-              <Card className="shadow-sm border border-border">
-                <CardHeader className="p-4 pb-1">
-                  <CardTitle className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Traffic Flow</CardTitle>
-                </CardHeader>
-                <CardContent className="p-3">
-                  <div className="h-44 border border-border/60 rounded-md bg-background flex items-center justify-center p-1">
-                    <EvilSankeyChart
-                      data={sankeyData}
-                      chartConfig={sankeyConfig}
-                      className="w-full h-full"
-                      linkVariant="gradient"
-                    />
-                  </div>
-                  <div className="flex justify-end text-[10px] mt-1.5">
-                    <p className="text-muted-foreground">Charts by- &nbsp;</p>
-                    <a className="text-primary hover:underline font-medium" href="https://evilcharts.com" target="_blank" rel="noopener noreferrer">
-                      evilcharts.com
-                    </a>
                   </div>
                 </CardContent>
               </Card>
