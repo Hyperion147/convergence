@@ -43,8 +43,8 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://x.com/Hyperion9913" target="_blank" className="hover:text-primary transition-colors">
-                    Twitter
+                  <a href="https://x.com/suryansu87" target="_blank" className="hover:text-primary transition-colors">
+                    X (Twitter)
                   </a>
                 </li>
               </ul>
